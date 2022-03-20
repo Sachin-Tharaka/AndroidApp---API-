@@ -6,8 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
 import com.sachin.seng22243.api.UserAPIService
 import com.sachin.seng22243.databinding.FragmentFirstBinding
 import com.sachin.seng22243.model.User
@@ -41,18 +39,23 @@ class FirstFragment : Fragment() {
         binding.buttonFirst.setOnClickListener {
          //   findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 
+            val id = binding.editTextNumber.editableText
+
             val user = userAPIService.getUser(id.toString())
         user.enqueue(object : Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 val body = response.body()
                 body?.let {
-                    Log.i("FirstFragment Name", it.name)
-                    binding.textviewFirst.text = it.email
+                    binding.textviewMail.text = "Email : "+it.email
+                    binding.textviewName.text= "Name : "+it.name
+                    binding.textviewUsername.text= "User Name : "+it.username
+
                 }
             }
 
             override fun onFailure(call: Call<User>, t: Throwable) {
-                TODO("Not imlemented yet")
+                binding.textviewMail.text = "An Error Occurred!.Invalid User Id"
+
             }
         })
 
@@ -63,7 +66,7 @@ class FirstFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding= null;
+        _binding= null
 
     }
 }

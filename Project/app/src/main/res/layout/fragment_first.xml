@@ -4,27 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#BFF4F3"
     tools:context=".FirstFragment">
 
+
     <TextView
-        android:id="@+id/textview_first"
+        android:id="@+id/textview_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
+        android:layout_marginTop="124dp"
+        android:text="Welcome to Detail Finder"
+        android:textColor="#090808"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textview_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="192dp"
+        android:text=""
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textview_mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.294" />
 
+    <TextView
+        android:id="@+id/textview_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="232dp"
+        android:text="Enter The ID"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="268dp"
+        android:text=""
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/next"
+        android:layout_marginBottom="132dp"
+        android:background="#193CBA"
+        android:text="Check"
+        android:textColor="#FDFAFA"
+        android:textSize="16sp"
+        android:includeFontPadding="true"
+        app:circularflow_radiusInDP="8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        app:layout_constraintTop_toBottomOf="@id/textview_mail"
+        app:layout_constraintVertical_bias="0.743" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.588" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
